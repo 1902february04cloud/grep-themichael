@@ -1,0 +1,27 @@
+#1) grep -i '^Z' cities.txt
+--comments: This prints all the cities that start with the letter z. I ignored the case of
+'z' just incase the city wasn't capitalized.
+
+#2) grep -i 'gan\>' cities.txt
+--comments: This prints out the cities with cities ending in the word 'gan'. I used -i for
+the same reason as problem 1.
+
+#3) grep -i '^[ADE]' cities.txt 
+    grep -ic '^[ADE]' cities.txt 
+--comments: The first line outputs the all the cities that start with an A, D or E using
+the [ABC] command. The second line checks to make sure there are 53 output by adding the
+-c flag.
+
+#4) grep -i '\<.ar' cities.txt
+    grep -ic '\<.ar' cities.txt
+    
+--comments: The first line uses '.' to ignore the first char and the output prints out all
+the cities where the second and third letter are 'a' and 'r'. It checks all the words in
+the line with the \< command. The second line checks if there are 22 outputs.
+
+#5) grep -ivc '^c' cities.txt
+    
+--comments: I use the -v flag to uses the not grep. This gets everything that doesnt
+start with 'c'.
+
+#6)    
