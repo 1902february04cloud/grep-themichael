@@ -24,4 +24,33 @@ the line with the \< command. The second line checks if there are 22 outputs.
 --comments: I use the -v flag to uses the not grep. This gets everything that doesnt
 start with 'c'.
 
-#6)    
+#6) grep -E [[:alpha:]-]{14} cities.txt
+
+--comments: This uses egrep so it can take advantage of the the [[:alpha:]-]{14} command
+which looks for alphabetic char and I added the '-' since its common to have one in a city
+name. 
+
+#7) grep -ic '^B' cities.txt 
+
+--comments: Just used -c to count outputs.
+
+#8) grep -o 'd' cities.txt | grep -c 'd' 
+
+--comments: The first part of the command outputs all the d's on a separate line. Since the
+ -c flag only looks at the lines it will miss the d's that are in the same line. Thus, the 
+solution needs to be piped.     
+
+
+#9) grep -E '(.)\1$' cities.txt
+
+--comments: This command uses egep. The /1 is used as an operator to the char in the
+parentheses to make it repeat once. So since we are using the dot, it will work for
+any char. 
+
+#10) grep -i  '^\(.\)\(.\).\2\1$' cities.txt
+
+--comments: I decided to stick with regular grep for this one, egrep would be similar
+except there would be less slashes. Since we are using 5 letters for palindrome
+the middle letter can be anything so I put the dot in the middle. The dots in /(./)
+can be any letter, and the \n (where n is an int) refers to the order of the /(./)
+and is the same char respectivly.  
